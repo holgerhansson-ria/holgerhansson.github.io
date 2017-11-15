@@ -26,8 +26,12 @@
 		</script>
 	</head>
 	<body>
- 
+
+ 		<div class="bootstrap-iso">
 		<div class="container">
+		<div class="row">
+   		<div class="col-md-6 col-sm-6 col-xs-12">
+
 			<h1>Tellimusleht</h1>
 			<script type="text/javascript">var submitted=false;</script>
 			<!-- <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='https://blog.webjeda.com/demo/google-form-customize/';}"></iframe> -->
@@ -45,19 +49,41 @@
 				<label>Kellele on kaup mõeldud (isiku nimi)</label>
 				<input name="entry.181448582" type="text" required="" maxlength="18" placeholder="Isiku nimi" />
 					<br />
-				<label>Millal kaupa tarvis</label>
-				<div class="input-group date" data-provide="datepicker">
-					<input type="text" class="form-control">
-				</div>
+				<div class="form-group"> <!-- Date input -->
+			    	<label class="control-label" for="date">Millal kaupa tarvis</label>
+			    	<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+			    </div>
 					<br />
 			  </div>
 			</form>
 
 			<input type="submit" value="Send" form="tellimus"/>
+
+		</div>
+		</div>
+		</div>
 		</div>
 
+	<!-- Datepicker script -->
+	<script>
+	    $(document).ready(function(){
+	      var date_input=$('input[name="date"]'); //our date input has the name "date"
+	      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+	      var options={
+	        format: 'mm/dd/yyyy',
+	        container: container,
+	        todayHighlight: true,
+	        autoclose: true,
+	      };
+	      date_input.datepicker(options);
+	    })
+	</script>
+
+	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<!-- Bootstrap 4 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
 	</body>
 </html>
