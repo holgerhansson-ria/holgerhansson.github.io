@@ -5,20 +5,22 @@
 
 		<title>Tellimusleht</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-		<meta name="description" content="" />
-		<link rel="stylesheet" href="/css/demo.css">
-		<link href="/css/prettify.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-		<script src="/js/mindmup-editabletable.js"></script>
-		<script src="/js/numeric-input-example.js"></script>
-		<script src="/js/prettify.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery UI Datepicker - Default functionality</title>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$( function() {
+				$( "#datepicker" ).datepicker();
+			} );
+		</script>
 	</head>
-	<body>
+<body>
+ 
+<p>Date: <input type="text" id="datepicker"></p>
+ 
 		<div class="demo-container">
 		<h1>Tellimusleht</h1>
 		<script type="text/javascript">var submitted=false;</script>
@@ -36,42 +38,9 @@
 		<label>Kellele on kaup mõeldud (isiku nimi)</label>
 		<input name="entry.181448582" type="text" required="" maxlength="18" placeholder="Isiku nimi" />
 		<br />
-		<input id="formButton" type="submit" value="Send" />
+		<input type="submit" value="Send" />
 		</form>
 		</div>
-		<div class="container">
-		  <div class="hero-unit">
-		  </div>
-			<hr/>
-				<div class="alert alert-error hide">
-					That would cost too much
-				</div>
-		          <table id="mainTable" class="table table-striped">
-		            <thead><tr><th>Name</th><th>Cost</th><th>Profit</th><th>Fun</th></tr></thead>
-		            <tbody>
-		              <tr><td>Car</td><td>100</td><td>200</td><td>0</td></tr>
-		              <tr><td>Bike</td><td>330</td><td>240</td><td>1</td></tr>
-		              <tr><td>Plane</td><td>430</td><td>540</td><td>3</td></tr>
-		              <tr><td>Yacht</td><td>100</td><td>200</td><td>0</td></tr>
-		              <tr><td>Segway</td><td>330</td><td>240</td><td>1</td></tr>
-		            </tbody>
-					<tfoot><tr><th><strong>TOTAL</strong></th><th></th><th></th><th></th></tr></thead>
-		          </table>
-		</div>
-<script>
-	$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
-	$('#textAreaEditor').editableTableWidget({editor: $('<textarea>')});
-	window.prettyPrint && prettyPrint();
-	$('formButton').click(function(){
-	    $.post("demo_test_post.asp",
-	    {
-	        name: "Donald Duck",
-	        city: "Duckburg"
-	    },
-	    function(data, status){
-	        alert("Data: " + data + "\nStatus: " + status);
-	    });
-	});
-</script>
+
 </body>
 </html>
