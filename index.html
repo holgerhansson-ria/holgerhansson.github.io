@@ -25,11 +25,11 @@
 		<script src="/js/table.js"></script>
 
 		<!-- Form-to-table script FTT -->
-		<script src="/js/table.js"></script>
+		<script src="/js/ftt.js"></script>
 
 	</head>
 	<body>
-
+		<div class="container">
 			<h1>Tellimusleht</h1>
 			<script type="text/javascript">var submitted=false;</script>
 			<!-- <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='https://blog.webjeda.com/demo/google-form-customize/';}"></iframe> -->
@@ -50,11 +50,12 @@
 				<label>Kellele on kaup mõeldud (isiku nimi)</label>
 				<input name="entry.181448582" type="text" required="" maxlength="18" placeholder="Isiku nimi" />
 					<br />
-				<label>Millal kaupa tarvis</label>
-			    <input id="datepicker" name="date" placeholder="MM/DD/YYY" type="text"/>
-					<br />
+				<div class="input-group date">
+					<label>Millal kaupa tarvis</label>
+  					<input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+				</div>
 			  </div>
-			  <input type="button" id="form_to_table"/>
+			  <input type="button" id="form_to_table">Lisa tellimuslehele</input>
 			</form>
 
 			<table id='test-table' class='table table-bordered'>
@@ -91,11 +92,11 @@
 			</table>
 
 			<input type="submit" value="Send" form="tellimus"/>
-
+		</div>
 	<!-- Datepicker script -->
 	<script>
-        $('#datepicker').datepicker({
-        });
+        $('.input-group.date').datepicker({
+		});
     </script>
 
     <!-- Table script -->
