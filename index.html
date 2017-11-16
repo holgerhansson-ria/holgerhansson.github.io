@@ -51,9 +51,12 @@
 				<label>Kellele on kaup mõeldud (isiku nimi)</label>
 				<input name="entry.181448582" type="text" required="" maxlength="18" placeholder="Isiku nimi" />
 					<br />
-				<div class="input-group date">
+				<div class="datepicker" data-provide="datepicker">
 					<label>Millal kaupa tarvis</label>
-  					<input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+  					<input type="text" class="form-control">
+  					<span class="input-group-addon">
+  					  <i class="glyphicon glyphicon-th"></i>
+  					</span>
 				</div>
 			  </div>
 			  <input type="button" id="form_to_table" value="Lisa tellimuslehele"/>
@@ -61,40 +64,9 @@
 
 		</div>
 
-		<div class="table-editable">
-			<table id='test-table' class='table table-bordered'>
-			    <tbody>
-			      <tr>
-			        <th>Objekt</th>
-			        <th>Nimetus</th>
-			        <th>Kogus</th>
-			        <th>Kellele vaja?</th>
-			        <th>Millal vaja?</th>
-			      </tr>
-			      <tr>
-			        <td>jQuery</td>
-			        <td>96</td>
-			        <td>83</td>
-			        <td>A</td>
-			        <td>A</td>
-			      </tr>
-			      <tr>
-			        <td>Script</td>
-			        <td>86</td>
-			        <td>76</td>
-			        <td>C</td>
-			        <td>A</td>
-			      </tr>
-			      <tr>
-			        <td>Net</td>
-			        <td>83</td>
-			        <td>2</td>
-			        <td>D</td>
-			        <td>A</td>
-			      </tr>
-			    </tbody>
-			</table>
+		<div id="demo-1">
 		</div>
+
 
 		<input type="submit" value="Send" form="tellimus"/>
 	<!-- Datepicker script -->
@@ -102,13 +74,12 @@
         $('.input-group.date').datepicker({
 		});
     </script>
-
     <!-- Table script -->
     <script>
-            $('#test-table').table({
-            inputCss: {padding: '0.75em'},
-            cellType: 'td',
-        })
+    jQuery('#demo-1').tabularInput({
+		'rows': 5,
+		'columns': 5
+	});
     </script>
 
 	</body>
