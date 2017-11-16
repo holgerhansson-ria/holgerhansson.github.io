@@ -21,6 +21,9 @@
 		<link id="bsdp-css" href="/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 		<script src="/js/bootstrap-datepicker.min.js"></script>
 
+		<!-- Editable Table JQuery -->
+		<script src="/js/table.js"></script>
+
 	</head>
 	<body>
 
@@ -49,13 +52,44 @@
 				<label>Kellele on kaup mõeldud (isiku nimi)</label>
 				<input name="entry.181448582" type="text" required="" maxlength="18" placeholder="Isiku nimi" />
 					<br />
-				<div class="form-group"> <!-- Date input -->
-			    	<label class="control-label" for="date">Millal kaupa tarvis</label>
-			    	<input class="form-control" id="datepicker" name="date" placeholder="MM/DD/YYY" type="text"/>
-			    </div>
+				<label>Millal kaupa tarvis</label>
+			    <input id="datepicker" name="date" placeholder="MM/DD/YYY" type="text"/>
 					<br />
 			  </div>
 			</form>
+
+			<table id='test-table' class='table table-bordered'>
+			    <tbody>
+			      <tr>
+			        <th>Objekt</th>
+			        <th>Nimetus</th>
+			        <th>Kogus</th>
+			        <th>Kellele vaja?</th>
+			        <th>Millal vaja?</th>
+			      </tr>
+			      <tr>
+			        <td>jQuery</td>
+			        <td>96</td>
+			        <td>83</td>
+			        <td>A</td>
+			        <td>A</td>
+			      </tr>
+			      <tr>
+			        <td>Script</td>
+			        <td>86</td>
+			        <td>76</td>
+			        <td>C</td>
+			        <td>A</td>
+			      </tr>
+			      <tr>
+			        <td>Net</td>
+			        <td>83</td>
+			        <td>2</td>
+			        <td>D</td>
+			        <td>A</td>
+			      </tr>
+			    </tbody>
+			</table>
 
 			<input type="submit" value="Send" form="tellimus"/>
 
@@ -68,6 +102,17 @@
 	<script>
         $('#datepicker').datepicker({
         });
+    </script>
+
+    <!-- Table script -->
+    <script>
+            $('#test-table').table({
+            inputCss: {padding: '0.75em'},
+            cellType: 'td',
+            select:{
+                3:['A','B','C','D','E']
+            }
+        })
     </script>
 
 	</body>
