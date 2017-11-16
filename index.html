@@ -9,21 +9,17 @@
 		
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	
 		<!-- Bootstrap 4 -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		
-		<!-- Bootstrap Date-Picker -->
-		<link id="bsdp-css" href="/css/bootstrap-datepicker3.min.css" rel="stylesheet">
-		<script src="/js/bootstrap-datepicker.min.js"></script>
 
 		<!-- Editable Table JQuery -->
-		<script src="/js/table.js"></script>
-		<link href="css/tabular-input.css" rel="stylesheet">
-		<script src="js/tabular-input.js"></script>
-
+		<link href="/css/tabular-input.css" rel="stylesheet">
+		<script src="/js/tabular-input.js"></script>
 
 		<!-- Form-to-table script FTT -->
 		<script src="/js/ftt.js"></script>
@@ -51,14 +47,8 @@
 				<label>Kellele on kaup mõeldud (isiku nimi)</label>
 				<input name="entry.181448582" type="text" required="" maxlength="18" placeholder="Isiku nimi" />
 					<br />
-				<div class="datepicker" data-provide="datepicker">
-					<label>Millal kaupa tarvis</label>
-  					<input type="text" class="form-control">
-  					<span class="input-group-addon">
-  					  <i class="glyphicon glyphicon-th"></i>
-  					</span>
-				</div>
-			  </div>
+				<label>Millal on tellimust vaja</label>
+				<input type="text" id="datepicker"/>
 			  <input type="button" id="form_to_table" value="Lisa tellimuslehele"/>
 			</form>
 
@@ -71,8 +61,9 @@
 		<input type="submit" value="Send" form="tellimus"/>
 	<!-- Datepicker script -->
 	<script>
-        $('.input-group.date').datepicker({
-		});
+	  $( function() {
+	    $( "#datepicker" ).datepicker();
+	  } );
     </script>
     <!-- Table script -->
     <script>
