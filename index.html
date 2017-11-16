@@ -8,8 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<!-- jQuery -->
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	
 		<!-- Bootstrap 4 -->
@@ -23,6 +21,9 @@
 
 		<!-- Editable Table JQuery -->
 		<script src="/js/table.js"></script>
+		<link href="css/tabular-input.css" rel="stylesheet">
+		<script src="js/tabular-input.js"></script>
+
 
 		<!-- Form-to-table script FTT -->
 		<script src="/js/ftt.js"></script>
@@ -55,9 +56,12 @@
   					<input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 				</div>
 			  </div>
-			  <input type="button" id="form_to_table">Lisa tellimuslehele</input>
+			  <input type="button" id="form_to_table" value="Lisa tellimuslehele"/>
 			</form>
 
+		</div>
+
+		<div class="table-editable">
 			<table id='test-table' class='table table-bordered'>
 			    <tbody>
 			      <tr>
@@ -90,9 +94,9 @@
 			      </tr>
 			    </tbody>
 			</table>
-
-			<input type="submit" value="Send" form="tellimus"/>
 		</div>
+
+		<input type="submit" value="Send" form="tellimus"/>
 	<!-- Datepicker script -->
 	<script>
         $('.input-group.date').datepicker({
@@ -104,9 +108,6 @@
             $('#test-table').table({
             inputCss: {padding: '0.75em'},
             cellType: 'td',
-            select:{
-                3:['A','B','C','D','E']
-            }
         })
     </script>
 
