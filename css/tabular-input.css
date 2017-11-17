@@ -22,10 +22,19 @@
 	}
 }
 
+body { background-color:#fafafa;}
+.container { margin:50px auto; max-width:720px; }
+h2 { margin:30px auto;}
+
+#form_to_table
+{
+	margin-top: 10px;
+}
+
 .tabularInput-table
 {
 	border-collapse: collapse;
-	max-width: 100%;
+	width: 100%;
 }
 
 .tabularInput-table tbody
