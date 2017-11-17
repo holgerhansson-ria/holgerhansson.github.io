@@ -25,6 +25,7 @@
 body { background-color:#fafafa;}
 .container { margin:50px auto; max-width:720px; }
 h2 { margin:30px auto;}
+.btn { margin: 5px; }
 
 #form_to_table
 {
