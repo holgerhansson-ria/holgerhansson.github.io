@@ -16,8 +16,8 @@ $(document).ready(function() {
 
     	$("#overview").tabularInput("addRow");
 
-    	$( ".input" + currentRow ).each( function(i, elem) {
-    		jQuery('[name="tellimusLeht[' + i + '][' + currentRow + ']"]').val(elem.value);
+    	$( ".input" + currentRow ).each( function(column, elem) {
+    		jQuery('[name="tellimusLeht[' + column + '][' + currentRow + ']"]').val(elem.value);
 		});
 
 		for (i = 1; i <= currentRow; i++) {
