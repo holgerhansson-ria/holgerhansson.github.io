@@ -23,9 +23,16 @@
 }
 
 body { background-color:#fafafa;}
+
 .container { margin:50px auto; max-width:720px; }
+
 h2 { margin:30px auto;}
+
 .btn { margin: 5px; }
+
+input:disabled {
+    background: white;
+}
 
 #form_to_table
 {
@@ -78,14 +85,6 @@ h2 { margin:30px auto;}
 	border-right-width: 1px;
 }
 
-.tabularInput-table td input:focus
-{
-	box-shadow: 0px 0px 4px 2px #A1C2F3;
-	border-color: transparent;
-	outline: none;
-	z-index: 1;
-	position: relative;
-}
 .tabularInput-table tr.animate-add,
 .tabularInput-table tr.animate-remove
 {
