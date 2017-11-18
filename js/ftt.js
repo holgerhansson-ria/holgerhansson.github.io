@@ -1,4 +1,6 @@
-currentCycle = 1;
+var currentRow = 1;
+var firstRun = true;
+
 $(document).ready(function() {
 	$("#overview input").attr("disabled", true);
 	$('#datetimepicker').datetimepicker({
@@ -14,38 +16,39 @@ $(document).ready(function() {
 
     	$("#overview").tabularInput("addRow");
 
-    	$( ".input" + currentCycle ).each( function(i, elem) {
-    		jQuery('[name="tellimusLeht[' + i + '][' + currentCycle + ']"]').val(elem.value);
+    	$( ".input" + currentRow ).each( function(i, elem) {
+    		jQuery('[name="tellimusLeht[' + i + '][' + currentRow + ']"]').val(elem.value);
 		});
 
-		for (i = 1; i <= currentCycle; i++) {
+		for (i = 1; i <= currentRow; i++) {
 		    $( ".input" + i ).hide();
 		} 
 		
-		if(currentCycle == 1){
+		if(currentRow == 1 && firstRun == true){
 			$("#overview").tabularInput("deleteRow");
 		};
 		
-		currentCycle += 1;
+		firstRun = false;
+		currentRow += 1;
 
-		if(currentCycle > 1){
+		if(currentRow > 1){
 			$('#delRow').prop('disabled', false);
 		}
 		else {
 			$('#delRow').prop('disabled', true);
 		}
 
-		$( ".input" + currentCycle ).show();
+		$( ".input" + currentRow ).show();
 		$("#overview input").attr("disabled", true);	
 
     });
     $('#delRow').click(function() {
-	    if(currentCycle != 1){
-	    	$( ".input" + currentCycle ).hide();
-	    	currentCycle -= 1;
-	    	$( ".input" + currentCycle ).show();
+	    if(currentRow != 1){
+	    	$( ".input" + currentRow ).hide();
+	    	currentRow -= 1;
+	    	$( ".input" + currentRow ).show();
 	    }
-	    if(currentCycle > 2){
+	    if(currentRow >= 2){
 			$('#delRow').prop('disabled', false);
 		}
 		else {
